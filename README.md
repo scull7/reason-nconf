@@ -1,4 +1,4 @@
-[Project Status](https://img.shields.io/badge/status-alpha-red.svg)
+![Project Status](https://img.shields.io/badge/status-alpha-red.svg)
 
 # reason-nconf
 ReasonML bindings to the nconf library.
