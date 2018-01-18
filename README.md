@@ -1,6 +1,8 @@
 # reason-nconf
 ReasonML bindings to the nconf library.
 
+
+## Usage
 ```reason
 type config = {
   ..
