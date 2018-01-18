@@ -1,6 +1,7 @@
 # reason-nconf
 ReasonML bindings to the nconf library.
 
+This is a very rough implementation that will enable very simple use cases.
 
 ## Usage
 ```reason
@@ -21,3 +22,27 @@ let appConfig: config =
     |> get()
   );
 ```
+
+## How do I install it?
+
+Inside of a BuckleScript project:
+```shell
+yarn install --save reason-nconf
+```
+
+Then add `reason-nconf` to your `bs-dependencies` in `bsconfig.json`:
+```json
+{
+  "bs-dependencies": [
+    "reason-nconf"
+  ]
+}
+```
+
+## How do I use it?
+
+See the [Usage](#usage) section above...
+
+## What's missing?
+
+Mostly everything...

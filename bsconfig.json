@@ -1,0 +1,9 @@
+{
+  "name": "reason-nconf",
+  "version": "0.0.1",
+  "sources": [
+    "src"
+  ],
+  "bs-dev-dependencies": [],
+  "bs-dependencies" :[]
+}
