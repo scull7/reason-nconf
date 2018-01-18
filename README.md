@@ -1,3 +1,5 @@
+[![Project State](https://img.shields.io/badge/state-alpha-red.svg)]
+
 # reason-nconf
 ReasonML bindings to the nconf library.
 
