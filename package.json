@@ -10,6 +10,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "bs-platform": "^2.1.0",
     "nconf": "^0.10.0"
   }
 }

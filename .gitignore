@@ -19,3 +19,6 @@ node_modules
 # oasis generated files
 setup.data
 setup.log
+
+.merlin
+.bsb.lock

@@ -3,8 +3,7 @@ type nconf;
 [@bs.new] [@bs.module "nconf"]
 external make : unit => nconf = "Provider";
 
-[@bs.send.pipe : nconf]
-external overrides : 'a => nconf = "";
+[@bs.send.pipe : nconf] external overrides : 'a => nconf = "";
 
 [@bs.send.pipe : nconf]
 external env : unit => nconf = "";
@@ -23,4 +22,3 @@ external defaults : 'a => nconf = "";
 
 [@bs.send.pipe : nconf]
 external get : unit => 'a = "";
-

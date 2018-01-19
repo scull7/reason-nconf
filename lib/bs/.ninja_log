@@ -1,0 +1,6 @@
+# ninja log v5
+0	21	1516322744	src/nconf.mlast	cf1368372d0a31c5
+21	27	1516322744	src/nconf.mlast.d	cd2d2b2e90e1343
+0	13	1516322744	src/nconf.cmj	2ea458b6225fe307
+0	13	1516322744	/Users/nathansculli/scull7/reason-nconf/src/nconf.bs.js	2ea458b6225fe307
+0	13	1516322744	src/nconf.cmi	2ea458b6225fe307
