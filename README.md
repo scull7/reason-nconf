@@ -1,7 +1,7 @@
 ![Project Status](https://img.shields.io/badge/status-alpha-red.svg)
 
 # reason-nconf
-ReasonML bindings to the nconf library.
+ReasonML bindings to the [nconf][node-nconf] library.
 
 This is a very rough implementation that will enable very simple use cases.
 
@@ -48,3 +48,5 @@ See the [Usage](#usage) section above...
 ## What's missing?
 
 Mostly everything...
+
+[node-nconf]: https://www.npmjs.com/package/nconf
