@@ -1,6 +1,6 @@
 {
   "name": "reason-nconf",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reason/BuckleScript bindings to the nconf library.",
   "main": "src/nconf.bs.js",
   "homepage": "https://github.com/scull7/reason-nconf",
