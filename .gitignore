@@ -10,7 +10,6 @@
 
 # ocamlbuild working directory
 _build/
-node_modules
 
 # ocamlbuild targets
 *.byte
@@ -20,5 +19,9 @@ node_modules
 setup.data
 setup.log
 
+# bucklescript ignores
+lib/*
+!lib/js
 .merlin
 .bsb.lock
+node_modules/
