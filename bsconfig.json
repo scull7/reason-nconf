@@ -7,7 +7,11 @@
   },
   "suffix": ".bs.js",
   "sources": [
-    "src"
+    "src",
+    {
+      "dir": "examples",
+      "type": "dev"
+    }
   ],
   "bs-dev-dependencies": [],
   "bs-dependencies" :[],
