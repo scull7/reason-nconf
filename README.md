@@ -11,7 +11,7 @@ type config = {
   ..
   "THING1": string,
   "THING2": int
-}
+};
  
 let baseDir = "/path/to/somewhere"
 let appConfig: config =
