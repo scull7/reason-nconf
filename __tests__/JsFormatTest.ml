@@ -5,9 +5,9 @@ describe "Stringify should return a json string" (fun () ->
   let open Expect in
   test "stringify should properly stringify an object" (fun () ->
     let testObj = [%bs.obj {
-      obj = [%bs.obj {
+      obj = {
         str = "test"
-      }]
+      }
     }]
     in
     let expected = {|module.exports = {
@@ -33,9 +33,9 @@ describe "Parse should return a javascript object" (fun () ->
       }
     |} in
     let expected = [%bs.obj {
-      obj = [%bs.obj {
+      obj = {
         str = "test"
-      }]
+      }
     }] in
     let actual = JsFormat.parse testInput in
     let _ = Js.log2 "ACTUAL" actual in
