@@ -1,4 +1,6 @@
-![Project Status](https://img.shields.io/badge/status-alpha-red.svg)
+[![NPM](https://nodei.co/npm/reason-nconf.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/reason-nconf/)
+[![Build Status](https://www.travis-ci.org/scull7/reason-nconf.svg?branch=master)](https://www.travis-ci.org/scull7/reason-nconf)
+[![Coverage Status](https://coveralls.io/repos/github/scull7/reason-nconf/badge.svg?branch=master)](https://coveralls.io/github/scull7/reason-nconf?branch=master)
 
 # reason-nconf
 ReasonML bindings to the [nconf][node-nconf] library.
@@ -12,7 +14,7 @@ type config = {
   "THING1": string,
   "THING2": int
 };
- 
+
 let baseDir = "/path/to/somewhere"
 let appConfig: config =
   Nconf.(
