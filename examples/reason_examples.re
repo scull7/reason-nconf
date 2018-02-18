@@ -1,14 +1,13 @@
-
 type config = {
   .
   "_APPNAME": string,
   "_THING1": string,
-  "_THING2": int,
+  "_THING2": int
 };
 
 let baseDir =
-  switch ([%bs.node __dirname]) {
-  | None => Js.Exn.raiseError("Not running in NodeJS context, no, current dir")  
+  switch [%bs.node __dirname] {
+  | None => Js.Exn.raiseError("Not running in NodeJS context, no, current dir")
   | Some(path) => path
   };
 
@@ -23,5 +22,4 @@ let appConfig: config =
     |> get()
   );
 
-Js.log(appConfig)
-
+Js.log(appConfig);

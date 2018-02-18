@@ -2,6 +2,19 @@
   "name": "reason-nconf",
   "version": "0.1.3",
   "description": "Reason/BuckleScript bindings to the nconf library.",
+  "scripts": {
+    "build": "bsb -make-world",
+    "clean": "bsb -clean-world",
+    "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
+    "start": "bsb -make-world -w",
+    "test": "yarn run clean; yarn run build; jest --coverage && yarn run coverage",
+    "watch:jest": "jest --coverage --watchAll"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "__tests__/assets"
+    ]
+  },
   "main": "src/nconf.bs.js",
   "homepage": "https://github.com/scull7/reason-nconf",
   "repository": "git@github.com:scull7/reason-nconf.git",
@@ -17,7 +30,11 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "bs-platform": "^2.1.0",
+    "bs-platform": "^2.2.1",
     "nconf": "^0.10.0"
+  },
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.4.2",
+    "@glennsl/bs-json": "^1.1.2"
   }
 }
