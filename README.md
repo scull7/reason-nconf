@@ -27,6 +27,16 @@ let appConfig: config =
   );
 ```
 
+### Load a JavaScript file
+```reason
+let appConfig =
+  Nconf.(
+    make()
+    |> jsFilePathNamed("example", {j|/path/to/file.js|j})
+    |> get()
+  );
+```
+
 ## How do I install it?
 
 Inside of a BuckleScript project:
