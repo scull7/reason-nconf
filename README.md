@@ -28,6 +28,8 @@ let appConfig: config =
 ```
 
 ### Load a JavaScript file
+This is accomplished from an internal module written in ReasonML.  The internal
+module is a near 1-to-1 copy of [nconf-js]
 ```reason
 let appConfig =
   Nconf.(
@@ -62,3 +64,4 @@ See the [Usage](#usage) section above...
 Mostly everything...
 
 [node-nconf]: https://www.npmjs.com/package/nconf
+[nconf-js]: https://github.com/yoneal/nconf-js
