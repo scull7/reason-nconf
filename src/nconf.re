@@ -35,6 +35,8 @@ external namedFileWithFormat : fileOptions('a) => nconf = "file";
 
 [@bs.send.pipe : nconf] external get : unit => 'a = "";
 
+[@bs.send] external getKey : (nconf, string) => Js.Nullable.t('a) = "get";
+
 [@bs.send] external setObject : (nconf, string, Js.t('a)) => unit = "set";
 
 [@bs.send]

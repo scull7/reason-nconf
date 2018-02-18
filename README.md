@@ -68,6 +68,21 @@ let appConfig =
   )
 ```
 
+### Get a value
+```reason
+let appConfig =
+  Nconf.(
+    make()
+    |> jsFilePathNamed("example", {j|./__tests__/assets/data.js|j})
+  )
+let username =
+  switch(Nconf.getKey(appConfig, "obj:auth:username") |> Js.Nullable.to_opt) {
+  | None => Js.Exn.raiseError("Could not retrieve username")
+  | Some(x) => x
+  };
+```
+
+
 ## How do I install it?
 
 Inside of a BuckleScript project:
