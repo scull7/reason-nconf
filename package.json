@@ -1,6 +1,6 @@
 {
   "name": "reason-nconf",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Reason/BuckleScript bindings to the nconf library.",
   "scripts": {
     "build": "bsb -make-world",
