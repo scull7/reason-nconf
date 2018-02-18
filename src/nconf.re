@@ -8,6 +8,8 @@ type format;
 
 [@bs.send.pipe : nconf] external env : unit => nconf = "";
 
+[@bs.send.pipe : nconf] external envWithSeparator : string => nconf = "env";
+
 [@bs.send.pipe : nconf] external argv : unit => nconf = "";
 
 [@bs.send.pipe : nconf] external filePathAnon : string => nconf = "file";
