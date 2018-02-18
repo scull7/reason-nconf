@@ -18,7 +18,7 @@ external filePathNamed : (string, string) => nconf = "file";
 type formatter('a) = {
   .
   "stringify": Js.t('a) => string,
-  "parse": (string, unit) => Js.t('a)
+  "parse": string => Js.t('a)
 };
 
 type fileOptions('a) = {

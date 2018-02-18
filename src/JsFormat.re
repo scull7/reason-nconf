@@ -23,7 +23,7 @@ let parse = input => {
   let options = {"lineOffset": 0, "displayErrors": Js.true_};
   let context = ref({
                   "_module": {
-                    "exports": Js.Obj.empty
+                    "exports": Js.Obj.empty()
                   }
                 });
   runInNewContext(input, context^, options);

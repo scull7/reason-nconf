@@ -24,10 +24,7 @@ describe "Stringify should return a json string" (fun () ->
 
 describe "Parse should return a javascript object" (fun () ->
   let open Expect in
-  (* Test is skipped because it's not returning output, even though
-    it looks to be compiled properly.
-  *)
-  Skip.test "simple test object" (fun () ->
+  test "simple test object" (fun () ->
     let testInput = {|
       module.exports = {
         obj: {
@@ -40,7 +37,7 @@ describe "Parse should return a javascript object" (fun () ->
         str = "test"
       }]
     }] in
-    let actual = JsFormat.parse testInput () in
+    let actual = JsFormat.parse testInput in
     let _ = Js.log2 "ACTUAL" actual in
     expect actual |> ExpectJs.toMatchObject expected
   )
