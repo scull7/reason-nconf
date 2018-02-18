@@ -38,7 +38,6 @@ describe "Parse should return a javascript object" (fun () ->
       }
     }] in
     let actual = JsFormat.parse testInput in
-    let _ = Js.log2 "ACTUAL" actual in
     expect actual |> ExpectJs.toMatchObject expected
   )
 );

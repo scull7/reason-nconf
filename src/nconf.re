@@ -35,8 +35,25 @@ external namedFileWithFormat : fileOptions('a) => nconf = "file";
 
 [@bs.send.pipe : nconf] external get : unit => 'a = "";
 
+[@bs.send] external setObject : (nconf, string, Js.t('a)) => unit = "set";
+
+[@bs.send]
+external setLiteral :
+  (nconf, string, [@bs.unwrap] [ | `Str(string) | `Int(int)]) => unit =
+  "set";
+
 let jsFilePathNamed = (name, path, nconf) => {
   let jsFormat = {"stringify": JsFormat.stringify, "parse": JsFormat.parse};
   nconf
   |> namedFileWithFormat({"name": name, "file": path, "format": jsFormat});
+};
+
+let setLiteral = (key, value, nconf) => {
+  setLiteral(nconf, key, value);
+  nconf;
+};
+
+let setObject = (key, obj, nconf) => {
+  setObject(nconf, key, obj);
+  nconf;
 };

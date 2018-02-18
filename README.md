@@ -39,6 +39,35 @@ let appConfig =
   );
 ```
 
+### Set a value
+#### String Literal
+```reason
+let appConfig =
+  Nconf.(
+    make()
+    |> setLiteral("some:key:path", `Str("foo"))
+    |> get()
+  )
+```
+#### Integer Literal
+```reason
+let appConfig =
+  Nconf.(
+    make()
+    |> setLiteral("some:key:path", `Int(42))
+    |> get()
+  )
+```
+#### Object Literal
+```reason
+let appConfig =
+  Nconf.(
+    make()
+    |> setObject("some:key:path", { "foo": "bar" })
+    |> get()
+  )
+```
+
 ## How do I install it?
 
 Inside of a BuckleScript project:
