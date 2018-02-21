@@ -25,13 +25,12 @@ type formatter('a) = {
 
 type fileOptions('a) = {
   .
-  "name": string,
   "file": string,
   "format": formatter('a)
 };
 
 [@bs.send.pipe : nconf]
-external namedFileWithFormat : fileOptions('a) => nconf = "file";
+external namedFileWithFormat : (string, fileOptions('a)) => nconf = "file";
 
 [@bs.send.pipe : nconf] external defaults : 'a => nconf = "";
 
@@ -48,8 +47,7 @@ external setLiteral :
 
 let jsFilePathNamed = (name, path, nconf) => {
   let jsFormat = {"stringify": JsFormat.stringify, "parse": JsFormat.parse};
-  nconf
-  |> namedFileWithFormat({"name": name, "file": path, "format": jsFormat});
+  nconf |> namedFileWithFormat(name, {"file": path, "format": jsFormat});
 };
 
 let setLiteral = (key, value, nconf) => {
