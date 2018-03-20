@@ -27,3 +27,4 @@ lib/*
 node_modules/
 *.bs.js
 coverage
+yarn-error.log
