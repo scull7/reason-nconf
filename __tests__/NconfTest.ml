@@ -41,17 +41,17 @@ describe "getKey should return the value at the given key" (fun () ->
   in
   let open Expect in
   test "it should return the value at an existing key" (fun () ->
-    match (Js.Nullable.to_opt (Nconf.getKey config "obj:auth:username")) with
+    match (Js.Nullable.toOption (Nconf.getKey config "obj:auth:username")) with
     | None -> (fail "key not found")
     | Some x -> expect x |> toBe "admin"
   );
   test "it should work for integer values too" (fun () ->
-    match (Js.Nullable.to_opt (Nconf.getKey config "obj:port")) with
+    match (Js.Nullable.toOption (Nconf.getKey config "obj:port")) with
     | None -> (fail "key not found")
     | Some x -> expect x |> toBe 5984
   );
   test "it should return null on a non-existant key" (fun () ->
-    match (Js.Nullable.to_opt (Nconf.getKey config "obj:auth:not_here")) with
+    match (Js.Nullable.toOption (Nconf.getKey config "obj:auth:not_here")) with
     | None -> pass
     | Some x -> (fail {j|Got unexpected value: $x|j})
   );
