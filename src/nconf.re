@@ -4,37 +4,37 @@ type format;
 
 [@bs.new] [@bs.module "nconf"] external make : unit => nconf = "Provider";
 
-[@bs.send.pipe : nconf] external overrides : 'a => nconf = "";
+[@bs.send.pipe: nconf] external overrides : 'a => nconf = "";
 
-[@bs.send.pipe : nconf] external env : unit => nconf = "";
+[@bs.send.pipe: nconf] external env : unit => nconf = "";
 
-[@bs.send.pipe : nconf] external envWithSeparator : string => nconf = "env";
+[@bs.send.pipe: nconf] external envWithSeparator : string => nconf = "env";
 
-[@bs.send.pipe : nconf] external argv : unit => nconf = "";
+[@bs.send.pipe: nconf] external argv : unit => nconf = "";
 
-[@bs.send.pipe : nconf] external filePathAnon : string => nconf = "file";
+[@bs.send.pipe: nconf] external filePathAnon : string => nconf = "file";
 
-[@bs.send.pipe : nconf]
+[@bs.send.pipe: nconf]
 external filePathNamed : (string, string) => nconf = "file";
 
 type formatter('a) = {
   .
   "stringify": Js.t('a) => string,
-  "parse": string => Js.t('a)
+  "parse": string => Js.t('a),
 };
 
 type fileOptions('a) = {
   .
   "file": string,
-  "format": formatter('a)
+  "format": formatter('a),
 };
 
-[@bs.send.pipe : nconf]
+[@bs.send.pipe: nconf]
 external namedFileWithFormat : (string, fileOptions('a)) => nconf = "file";
 
-[@bs.send.pipe : nconf] external defaults : 'a => nconf = "";
+[@bs.send.pipe: nconf] external defaults : 'a => nconf = "";
 
-[@bs.send.pipe : nconf] external get : unit => 'a = "";
+[@bs.send.pipe: nconf] external get : unit => 'a = "";
 
 [@bs.send] external getKey : (nconf, string) => Js.Nullable.t('a) = "get";
 

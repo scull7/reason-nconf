@@ -1,11 +1,12 @@
 /* Only providing the standard JSON.stringify, if you need more options, implement your own :) */
 [@bs.scope "JSON"] [@bs.val]
-external jsonStringify : (Js.t('a), Js.null('b), int) => string = "stringify";
+external jsonStringify : (Js.t('a), Js.null('b), int) => string =
+  "stringify";
 
 type vmOptions = {
   .
   "lineOffset": int,
-  "displayErrors": Js.boolean
+  "displayErrors": Js.boolean,
 };
 
 type context('a) = Js.t('a);
@@ -23,8 +24,8 @@ let parse = input => {
   let options = {"lineOffset": 0, "displayErrors": Js.true_};
   let context = ref({
                   "_module": {
-                    "exports": Js.Obj.empty()
-                  }
+                    "exports": Js.Obj.empty(),
+                  },
                 });
   runInNewContext(input, context^, options);
   let ctx = context^;
