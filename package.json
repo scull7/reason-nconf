@@ -6,6 +6,7 @@
     "build": "bsb -make-world",
     "clean": "bsb -clean-world",
     "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
+    "install:peers": "yarn add $(jq -r '.peerDependencies|keys|join(\" \")' package.json)",
     "start": "bsb -make-world -w",
     "test": "yarn run clean; yarn run build; jest --coverage && yarn run coverage",
     "watch:jest": "jest --coverage --watchAll"
