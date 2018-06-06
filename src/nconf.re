@@ -17,20 +17,20 @@ type format;
 [@bs.send.pipe: nconf]
 external filePathNamed : (string, string) => nconf = "file";
 
-type formatter('a) = {
+type formatter = {
   .
-  "stringify": Js.t('a) => string,
-  "parse": string => Js.t('a),
+  "stringify": Js.Json.t => string,
+  "parse": string => Js.Dict.t(Js.Json.t),
 };
 
-type fileOptions('a) = {
+type fileOptions = {
   .
   "file": string,
-  "format": formatter('a),
+  "format": formatter,
 };
 
 [@bs.send.pipe: nconf]
-external namedFileWithFormat : (string, fileOptions('a)) => nconf = "file";
+external namedFileWithFormat : (string, fileOptions) => nconf = "file";
 
 [@bs.send.pipe: nconf] external defaults : 'a => nconf = "";
 

@@ -1,15 +1,22 @@
 {
   "name": "reason-nconf",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Reason/BuckleScript bindings to the nconf library.",
   "scripts": {
     "build": "bsb -make-world",
     "clean": "bsb -clean-world",
     "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "install:peers": "yarn add $(jq -r '.peerDependencies|keys|join(\" \")' package.json)",
+    "precommit": "lint-staged",
     "start": "bsb -make-world -w",
     "test": "yarn run clean; yarn run build; jest --coverage && yarn run coverage",
     "watch:jest": "jest --coverage --watchAll"
+  },
+  "lint-staged": {
+    "*.{re,rei}": [
+      "refmt --in-place",
+      "git add"
+    ]
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -35,9 +42,11 @@
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.2",
-    "@glennsl/bs-json": "^1.1.2",
-    "coveralls": "^3.0.0",
-    "nyc": "^11.4.1",
+    "@glennsl/bs-json": "^2.0.0",
+    "coveralls": "^3.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
+    "nyc": "^11.8.0",
     "bs-platform": "^3.1.5"
   },
   "peerDependencies": {
