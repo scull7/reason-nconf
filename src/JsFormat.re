@@ -6,7 +6,7 @@ external jsonStringify : (Js.t('a), Js.null('b), int) => string =
 type vmOptions = {
   .
   "lineOffset": int,
-  "displayErrors": Js.boolean,
+  "displayErrors": bool,
 };
 
 type context('a) = Js.t('a);
@@ -21,7 +21,7 @@ let stringify = config => {
 };
 
 let parse = input => {
-  let options = {"lineOffset": 0, "displayErrors": Js.true_};
+  let options = {"lineOffset": 0, "displayErrors": true};
   let context = ref({
                   "_module": {
                     "exports": Js.Obj.empty(),
