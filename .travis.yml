@@ -4,4 +4,4 @@ node_js:
   - 6
 cache: yarn
 before_script:
-  - yarn install:peers
+  - yarn install

@@ -10,13 +10,12 @@ type vmOptions = {
 };
 
 [@bs.deriving abstract]
-type commonjs = {
-  exports: Js.Dict.t(Js.Json.t),
-};
+type commonjs = {exports: Js.Dict.t(Js.Json.t)};
 
 [@bs.deriving abstract]
 type context = {
-  [@bs.as "module"] module_: commonjs
+  [@bs.as "module"]
+  module_: commonjs,
 };
 
 [@bs.module "vm"]
@@ -29,13 +28,8 @@ let stringify = config => {
 };
 
 let parse = input => {
-  let options = {"lineOffset": 0, "displayErrors": true };
-  
-  let context = ref(context(
-      ~module_=commonjs(
-        ~exports=Js.Dict.empty()
-      )
-  ));
+  let options = {"lineOffset": 0, "displayErrors": true};
+  let context = ref(context(~module_=commonjs(~exports=Js.Dict.empty())));
   runInNewContext(input, context^, options);
   let ctx = context^;
   ctx |. module_ |. exports;
