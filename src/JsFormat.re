@@ -29,7 +29,6 @@ let stringify = config => {
 
 let parse = input => {
   let options = {"lineOffset": 0, "displayErrors": true};
-
   let context = ref(context(~module_=commonjs(~exports=Js.Dict.empty())));
   runInNewContext(input, context^, options);
   let ctx = context^;
