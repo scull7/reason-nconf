@@ -23,6 +23,8 @@ type formatter = {
   "parse": string => Js.Dict.t(Js.Json.t),
 };
 
+[@bs.module] [@bs.val] external yamlFormat : formatter = "nconf-yaml";
+
 type fileOptions = {
   .
   "file": string,
@@ -49,6 +51,9 @@ let jsFilePathNamed = (name, path, nconf) => {
   let jsFormat = {"stringify": JsFormat.stringify, "parse": JsFormat.parse};
   nconf |> namedFileWithFormat(name, {"file": path, "format": jsFormat});
 };
+
+let yamlFilePathNamed = (name, path, nconf) =>
+  nconf |> namedFileWithFormat(name, {"file": path, "format": yamlFormat});
 
 let setLiteral = (key, value, nconf) => {
   setLiteral(nconf, key, value);

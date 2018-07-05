@@ -38,7 +38,8 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "nconf": "^0.10.0"
+    "nconf": "^0.10.0",
+    "nconf-yaml": "^1.0.2"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.2",
