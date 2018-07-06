@@ -39,6 +39,7 @@
   "private": false,
   "dependencies": {
     "nconf": "^0.10.0",
+    "nconf-toml": "^0.0.2",
     "nconf-yaml": "^1.0.2"
   },
   "devDependencies": {

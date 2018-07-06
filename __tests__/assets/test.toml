@@ -1,0 +1,9 @@
+foo = "bar"
+moo = "cow"
+boo = 42
+
+things = [ "red fish", "blue fish" ]
+
+[dr]
+thing1 = "one fish"
+thing2 = "two fish"

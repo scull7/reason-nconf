@@ -2427,6 +2427,13 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
+nconf-toml@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/nconf-toml/-/nconf-toml-0.0.2.tgz#bba652e8d7deb734285e6bbf28cfe61bbbdede56"
+  dependencies:
+    toml "^2.3.0"
+    tomlify-j0.4 "^1.0.1"
+
 nconf-yaml@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/nconf-yaml/-/nconf-yaml-1.0.2.tgz#fea065333cf42b77a5e8060517969799d4156575"
@@ -3464,6 +3471,14 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
+
+toml@^2.3.0:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/toml/-/toml-2.3.3.tgz#8d683d729577cb286231dfc7a8affe58d31728fb"
+
+tomlify-j0.4@^1.0.1:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/tomlify-j0.4/-/tomlify-j0.4-1.0.4.tgz#ee01710c101791da70fc808d5e9219649a760945"
 
 tough-cookie@>=2.3.3, tough-cookie@^2.3.3:
   version "2.4.3"

@@ -25,6 +25,8 @@ type formatter = {
 
 [@bs.module] [@bs.val] external yamlFormat : formatter = "nconf-yaml";
 
+[@bs.module] [@bs.val] external tomlFormat : formatter = "nconf-toml";
+
 type fileOptions = {
   .
   "file": string,
@@ -54,6 +56,9 @@ let jsFilePathNamed = (name, path, nconf) => {
 
 let yamlFilePathNamed = (name, path, nconf) =>
   nconf |> namedFileWithFormat(name, {"file": path, "format": yamlFormat});
+
+let tomlFilePathNamed = (name, path, nconf) =>
+  nconf |> namedFileWithFormat(name, {"file": path, "format": tomlFormat});
 
 let setLiteral = (key, value, nconf) => {
   setLiteral(nconf, key, value);
