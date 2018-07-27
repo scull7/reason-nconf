@@ -32,5 +32,5 @@ let parse = input => {
   let context = ref(context(~module_=commonjs(~exports=Js.Dict.empty())));
   runInNewContext(input, context^, options);
   let ctx = context^;
-  ctx |. module_ |. exports;
+  ctx |. module_Get |. exportsGet;
 };
